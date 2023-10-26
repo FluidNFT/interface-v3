@@ -88,6 +88,7 @@ export enum CustomMarket {
   proto_optimism_goerli_v3 = 'proto_optimism_goerli_v3',
   proto_scroll_sepolia_v3 = 'proto_scroll_sepolia_v3',
   proto_sepolia_v3 = 'proto_sepolia_v3',
+  proto_calibrationnet_v3 = 'proto_calibrationnet_v3',
   // v3 mainnets
   proto_mainnet_v3 = 'proto_mainnet_v3',
   proto_optimism_v3 = 'proto_optimism_v3',
@@ -677,6 +678,26 @@ export const marketsData: {
     halIntegration: {
       URL: 'https://app.hal.xyz/recipes/aave-v3-track-health-factor',
       marketName: 'polygon',
+    },
+  },
+  [CustomMarket.proto_calibrationnet_v3]: {
+    marketTitle: 'Calibrationnet',
+    v3: true,
+    chainId: 314159, // ChainId.calibrationnet doesn't exist
+    enabledFeatures: {
+      faucet: true,
+      incentives: false,
+    },
+    //subgraphUrl: 'https://api.thegraph.com/subgraphs/name/aave/protocol-v3-arbitrum-goerli',  needs re-deployment
+    addresses: {
+      LENDING_POOL_ADDRESS_PROVIDER: '0x2d52a53054Ca97Ce58A279854789fea2179f1D9e', //AaveV3Calibrationnet.POOL_ADDRESSES_PROVIDER,
+      LENDING_POOL: '0x15dAB0186cE3722947EBA1717b27e86DA69C9E9C', //AaveV3Calibrationnet.POOL,
+      WETH_GATEWAY: '0x2113cB6267820709a798F5f4C31891edccf92554', //AaveV3Calibrationnet.WETH_GATEWAY,
+      FAUCET: '0x4f1988De6C0113671C68ee6a3Be987ac77cac40F', //AaveV3Calibrationnet.FAUCET,
+      WALLET_BALANCE_PROVIDER: '0x830A90d19BEc22bea5fCF2842b4aBD2eA52670b9', //AaveV3Calibrationnet.WALLET_BALANCE_PROVIDER,
+      UI_POOL_DATA_PROVIDER: '0x7546Ce6CCb05Ec77168B589eE444299f309e4D64', //AaveV3Calibrationnet.UI_POOL_DATA_PROVIDER,
+      UI_INCENTIVE_DATA_PROVIDER: '0x96C2fFd76AdCa5219A366a15EeCF61d6988addD8', //AaveV3Calibrationnet.UI_INCENTIVE_DATA_PROVIDER,
+      L2_ENCODER: '0x0000000000000000000000000000000000000000', //AaveV3Calibrationnet.L2_ENCODER,
     },
   },
 } as const;

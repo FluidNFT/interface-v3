@@ -413,4 +413,24 @@ export const networkConfigs: Record<string, BaseNetworkConfig> = {
     explorerLink: 'https://andromeda-explorer.metis.io',
     networkLogoPath: '/icons/networks/metis.svg',
   },
+  // [ChainId.calibrationnet]: {
+  [314159]: {
+    //ChainId.calibrationnet not in @aave/contracts-helper
+    name: 'Calibrationnet',
+    publicJsonRPCUrl: ['https://api.calibration.node.glif.io/rpc/v1'],
+    publicJsonRPCWSUrl: '',
+    baseUniswapAdapter: '0x0',
+    baseAssetSymbol: 'FIL',
+    wrappedBaseAssetSymbol: 'TFIL',
+    baseAssetDecimals: 18,
+    explorerLink: 'https://calibration.filfox.info/',
+    // usdMarket: true,
+    isTestnet: true,
+    networkLogoPath: '/icons/networks/filecoin.svg',
+    // bridge: {
+    //   icon: '/icons/bridge/avalanche.svg',
+    //   name: 'Calibrationnet Bridge',
+    //   url: 'https://bridge.avax.network/',
+    // },
+  },
 } as const;
